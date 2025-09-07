@@ -67,7 +67,7 @@ struct SidebarView: View {
     }
 
     private func onContainerSelected(container: TabContainer) {
-        withAnimation(.easeOut(duration: 0.1)) {
+        withAnimation(.smooth(duration: 0.05)) {
             tabManager.activateContainer(container)
         }
     }

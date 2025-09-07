@@ -46,7 +46,7 @@ struct BrowserView: View {
                                     isEnabled: true,
                                     foregroundColor: theme.foreground.opacity(0.3),
                                     action: {
-                                        withAnimation(.spring(response: 0.2, dampingFraction: 1.0)) {
+                                        withAnimation(.smooth(duration: 0.15)) {
                                             hide.toggle(.primary)
                                         }
                                     }

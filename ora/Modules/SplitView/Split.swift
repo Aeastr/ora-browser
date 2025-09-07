@@ -85,6 +85,11 @@ public struct Split<P: View, D: SplitDivider, S: View>: View {
             ZStack(alignment: .topLeading) {
                 if !hidePrimary {
                     primary
+//                        .transition(.asymmetric(insertion:
+//                                .blur(intensity: 20, scale: 0.93, scaleAnimation: .smooth(duration: 0.15)).animation(.smooth(duration: 0.3))
+//                                                    , removal:
+//                                .blur(intensity: 20, scale: 0.95, scaleAnimation: .smooth(duration: 0.15)).animation(.smooth(duration: 0.3))
+//                                               ))
                         .frame(width: pWidth, height: pHeight)
                 }
                 if !hideSecondary {

@@ -149,6 +149,20 @@ import SwiftUI
             self.view.wantsLayer = true
         }
 
+        override func scrollWheel(with event: NSEvent) {
+            // Amplify horizontal scroll events for faster container switching
+            if abs(event.scrollingDeltaX) > 0 {
+                let multiplier: CGFloat = 3.0
+
+                // Simulate multiple smaller scroll events to increase sensitivity
+                for _ in 0 ..< Int(multiplier) {
+                    super.scrollWheel(with: event)
+                }
+            } else {
+                super.scrollWheel(with: event)
+            }
+        }
+
         override func viewDidLayout() {
             super.viewDidLayout()
             for view in self.view.subviews {

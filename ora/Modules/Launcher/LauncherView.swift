@@ -70,14 +70,14 @@ struct LauncherView: View {
                 color: match?.color ?? .clear,
                 trigger: match != nil
             )
-            .offset(y: isVisible ? 250 : 240)
-            .scaleEffect(isVisible ? 1.0 : 0.85)
+            .scaleEffect(isVisible ? 1.0 : 0.9)
             .opacity(isVisible ? 1.0 : 0.0)
-            .blur(radius: isVisible ? 0 : 2)
+            .blur(radius: isVisible ? 0 : 6)
+            .offset(y: 250)
             .animation(
                 isVisible
-                    ? .spring(response: 0.15, dampingFraction: 0.5, blendDuration: 0.2)
-                    : .easeOut(duration: 0.1),
+                    ? .bouncy(duration: 0.25, extraBounce: -0.1)
+                    : .smooth(duration: 0.15),
                 value: isVisible
             )
             .onAppear {
